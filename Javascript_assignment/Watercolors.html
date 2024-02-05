@@ -9,6 +9,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <!-- <script src="scriptcarousel.js"></script> -->
 
 
 </head>
@@ -62,18 +63,20 @@
     </main>
 
     <div id="carousel-container">
-        <div id="image-list">
-            <img class="carousel-image" src="img/water1.jpeg" alt="Image 1">
-            <img class="carousel-image" src="img/water2.jpg" alt="Image 2">
-            <img class="carousel-image" src="img/water3.jpg" alt="Image 3">
-            <img class="carousel-image" src="img/water4.jpg" alt="Image 4">
-            <img class="carousel-image" src="img/water5.jpg" alt="Image 5">
-           
-
+            <div id="image-list">
+                <img class="carousel-image" src="img/Water1.jpg" alt="Image 1">
+                <img class="carousel-image" src="img/Water2.jpeg" alt="Image 2">
+                <img class="carousel-image" src="img/Water3.jpg" alt="Image 3">
+                <img class="carousel-image" src="img/Water4.jpg" alt="Image 4">
+                <img class="carousel-image" src="img/Water5.jpg" alt="Image 5">
+            </div>
         </div>
-        <button class="carousel-button" onclick="prevImage()">&#171</button>
-        <button class="carousel-button" onclick="nextImage()">&#187</button>
-    </div>
+        
+        <div class="buttons">
+        <button class="carousel-button" onclick="prevImage()">Previous</button>
+        <button class="carousel-button" onclick="nextImage()">Next</button>
+        </div>
+
 
     <footer class="footer">
         <div class="container">
@@ -87,19 +90,39 @@
                     <a href="classes.html" class="navigation-link">Art Courses</a>
                     <a href="contact.html" class="navigation-link">Contact</a>
                 </nav>
-
-
-
             </div>
-
-
-
-
         </div>
 
     </footer>
+<script>
+    
+        const imageList = document.getElementById('image-list');
+        const imageWidth = document.querySelector('.carousel-image')
+
+        function nextImage() {
+            imageList.style.transition = "transform 0.5s ease-in-out";
+            imageList.style.transform = `translateX(${-imageWidth}px)`;
+            setTimeout(() => {
+                imageList.appendChild(imageList.firstElementChild);
+                imageList.style.transition = "none";
+                imageList.style.transform = "translateX(0)";
+            }, 500);
+        }
+
+        function prevImage() {
+            imageList.style.transition = "none";
+            imageList.style.transform = `translateX(${-imageWidth}px)`;
+            setTimeout(() => {
+                imageList.style.transition = "transform 0.5s ease-in-out";
+                imageList.style.transform = "translateX(0)";
+                imageList.insertBefore(imageList.lastElementChild, imageList.firstElementChild);
+            }, 0);
+        }
+
+</script>
+
 
 </body>
-<script src="script.js"></script>
+
 
 </html>

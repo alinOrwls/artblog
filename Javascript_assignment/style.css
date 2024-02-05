@@ -277,6 +277,14 @@ img {
     height: auto;
 }
 
+/** contact us **/
+.contac-us{
+    display: flex;
+        gap: 2rem;
+    
+}
+
+
 /**Classes**/
 .course{
     padding: 3rem, 0 ;
@@ -304,61 +312,45 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
-.carousel {
- 
- height: 100vh;
-    position: relative;
-}
-.slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-        list-style: none;
-}
-.slide  >  img { 
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    object-position:  center;
-    
+#carousel-container{
+    width: 300px;
+    overflow: hidden;
+    margin: auto;
 
 }
-.slide[data-active] {
-    opacity: 1;
+
+#image-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    width: 100%;
+    min-width: 300px;
+    box-sizing: border-box;
 }
 
 .carousel-button {
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    font-size: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255,   255 , 255 ,  .5);
     cursor: pointer;
-    border-radius:  .25rem;
-    padding:  0 .5rem;
-    background-color: rgba(0,  0, 0, .1) ;
+    padding: 10px;
+    background-color: var(--maincolour);
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    margin-top: 10px;
+margin-left: 30px;
+
+
+
 }
- 
-.prev {
-    left: 1rem;
-}
- .next {
-     right: 5rem;
+
+.buttons {
+    display: flex;
+    justify-content: center;
     
- }
-
-.carousel-button:hover, 
-.carousel-button:focus  {
-    color: var(--white);
-    background-color: rgba(0, 0, 0, .2);
-
 }
-.carousel-button:focus {
-    outline: 1px solid black;
-}
+
 
 /*enroll*/
 .enroll-bg {
@@ -391,4 +383,18 @@ img {
     border: 1px solid var(--thirdcolour);
 }
 
+.error {
+    background-color: red ;
+    text-align: center;
+    padding: 1 rem;
+    color:  var(--white);
+    text-transform: uppercase;
+}
 
+.send {
+    background-color: #62A147;
+    text-align: center;
+    padding: 1rem;
+    color: var(--white);
+    text-transform: uppercase;
+}
